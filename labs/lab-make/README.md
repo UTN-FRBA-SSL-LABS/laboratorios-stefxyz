@@ -106,12 +106,12 @@ solo cambiamos una línea (`CC := clang`) y todo el Makefile se actualiza solo.
 
 Las variables más comunes en proyectos C son:
 
-| Variable | Uso convencional |
-|----------|-----------------|
-| `CC` | El compilador de C a usar (normalmente `gcc`) |
+| Variable | Uso convencional                                   |
+| -------- | -------------------------------------------------- |
+| `CC`     | El compilador de C a usar (normalmente `gcc`)      |
 | `CFLAGS` | Flags de compilación (p. ej. `-Wall`, `-g`, `-O2`) |
-| `SRCS` | Lista de archivos fuente `.c` |
-| `OBJS` | Lista de archivos objeto `.o` |
+| `SRCS`   | Lista de archivos fuente `.c`                      |
+| `OBJS`   | Lista de archivos objeto `.o`                      |
 
 ### El target `all`
 
@@ -159,11 +159,11 @@ Cuando tenemos muchos archivos, sería engorroso escribir el nombre de cada uno
 a mano en los comandos. Make provee variables automáticas que se calculan en el
 contexto de cada regla:
 
-| Variable | Significado |
-|----------|-------------|
-| `$@` | El nombre del **target** de esta regla |
-| `$<` | El **primer** prerequisito (primera dependencia) |
-| `$^` | **Todos** los prerequisitos juntos |
+| Variable | Significado                                      |
+| -------- | ------------------------------------------------ |
+| `$@`     | El nombre del **target** de esta regla           |
+| `$<`     | El **primer** prerequisito (primera dependencia) |
+| `$^`     | **Todos** los prerequisitos juntos               |
 
 Ejemplo: si la regla es `suma: main.o operaciones.o`, entonces dentro del comando:
 - `$@` vale `suma`
@@ -625,7 +625,7 @@ ejecución y la otra, ¿qué hace Make en la segunda ejecución?
 Opciones: `RECOMPILA` / `NO_RECOMPILA` / `DA_ERROR`
 
 ```
-P1=???
+P1=NO_RECOMPILA
 ```
 
 ---
@@ -639,7 +639,7 @@ llamado `clean`?
 Opciones: `SI` / `NO`
 
 ```
-P2=???
+P2=NO
 ```
 
 ---
@@ -652,7 +652,7 @@ P2=???
 Opciones: `PARA_CREAR_ARCHIVOS` / `PARA_EVITAR_CONFLICTOS_DE_NOMBRES` / `PARA_COMPILAR_MAS_RAPIDO`
 
 ```
-P3=???
+P3=PARA_EVITAR_CONFLICTOS_DE_NOMBRES
 ```
 
 ---
